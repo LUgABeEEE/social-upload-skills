@@ -107,6 +107,15 @@ sau douyin upload-note ...            # 发布图文
 
 使用前请阅读并遵守各平台的用户协议与自动化发布规则；本技能包仅作个人工作流自动化用途，因滥用导致的账号风险或法律责任由使用者自行承担。
 
+## 许可证
+
+本仓库以 [Apache License 2.0](LICENSE) 开源，版权声明见 [NOTICE](NOTICE)。
+
+本仓库只包含技能文档与命令契约描述，**未复制上游 `social-auto-upload` 的任何源码**；
+上游项目为 MIT 许可（Copyright (c) 2023 dreammis），对其 `sau` CLI 的描述性引用不构成代码再分发。
+
+贡献内容同样按 Apache-2.0 授权，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 更新记录
 
 见 [CHANGELOG.md](CHANGELOG.md)；上游版本锁定与平台覆盖见 [UPSTREAM.md](UPSTREAM.md)。

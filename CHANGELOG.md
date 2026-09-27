@@ -11,6 +11,8 @@
 
 ### Changed
 
+- 许可证由 MIT 变更为 **Apache License 2.0**：`LICENSE` 替换为 Apache 官方全文，
+  新增 `NOTICE`（版权声明 + 对上游 MIT 项目的归属说明）与 `CONTRIBUTING.md`，README 增加许可证章节
 - 统一 4 个技能的登录二维码处置口径，与 README「安全说明」对齐：
   默认把二维码图片的本地路径交给用户在本机扫码（二维码即登录态凭证），
   仅在用户明确信任聊天通道时才经会话发送图片

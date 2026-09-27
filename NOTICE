@@ -1,0 +1,10 @@
+social-upload-skills
+Copyright 2026 missfor100
+
+This product documents the command-line interface of social-auto-upload
+(https://github.com/dreammis/social-auto-upload), which is licensed under
+the MIT License, Copyright (c) 2023 dreammis.
+
+No source code from that project is redistributed in this repository; the
+skill files here are original documentation and workflow definitions that
+describe how to invoke its `sau` command.
