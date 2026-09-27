@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-27
+
 ### Added
 
 - `UPSTREAM.md`：上游 `social-auto-upload` 版本锁定（pin commit、关键依赖、升级固定流程）与
