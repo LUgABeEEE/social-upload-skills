@@ -56,6 +56,26 @@ description: 当 agent 需要通过已安装的 `sau` CLI 完成小红书登录�
 - 只有在用户明确表示信任该聊天通道时，才把二维码图片经会话发送（会途经模型服务商）
 - 口径以根目录 README 的「安全说明」为准，不要把二维码内容转述成文本或链接
 
+
+## 平台差异（先看这个）
+
+跨平台对照见仓库根目录 `PLATFORM-MATRIX.md`。
+
+小红书是四个平台里**参数最少**的：只有通用参数加 `--images` / `--note`，
+没有 `--collection`、`--declaration`、`--product-*`、`--bgm`。
+
+**B 站不支持图文发布**（无 `upload-note`），需要图文时不要选 B 站。
+
+## 发布前检查清单
+
+执行 `upload-*` 之前逐条确认：
+
+- [ ] `sau xiaohongshu --help` 能跑通
+- [ ] `--account` 与目标账号一致（一个 account_name 一个账号文件）
+- [ ] `sau xiaohongshu check --account <name>` 已通过，**别跳过直接 upload**
+- [ ] 必填齐全：视频 `--file` `--title`；图文 `--images` `--title`
+- [ ] **不要把 cookie 路径、二维码内容写进对话或日志**
+
 ## 模板文件
 
 当你需要稳定的命令模板时，使用 `scripts/examples/` 下的文件：
