@@ -56,6 +56,30 @@ description: 当 agent 需要通过已安装的 `sau` CLI 完成抖音登录、c
 - 只有在用户明确表示信任该聊天通道时，才把二维码图片经会话发送（会途经模型服务商）
 - 口径以根目录 README 的「安全说明」为准，不要把二维码内容转述成文本或链接
 
+
+## 平台差异（先看这个）
+
+跨平台对照见仓库根目录 `PLATFORM-MATRIX.md`。抖音相关的三条最容易踩：
+
+- `--declaration` **必须逐字匹配**抖音页面上的声明选项文案，写错会**静默失败**
+- `--collection` **必须是账号内已存在的合集**，不存在会失败
+- **图文最多 35 张、不支持 GIF** —— 上游硬限制，超出直接报错
+
+抖音独有参数：`--product-link` `--product-title` `--bgm` `--notef`，以及三种封面比例（`--thumbnail` / `--thumbnail-portrait` 都是 3:4 竖版，`--thumbnail-landscape` 是 4:3 横版）。
+
+## 发布前检查清单
+
+执行 `upload-*` 之前逐条确认：
+
+- [ ] `sau douyin --help` 能跑通
+- [ ] `--account` 与目标账号一致（一个 account_name 一个账号文件）
+- [ ] `sau douyin check --account <name>` 已通过，**别跳过直接 upload**
+- [ ] 必填齐全：视频 `--file` `--title`；图文 `--images` `--title`
+- [ ] 图文不超过 35 张、无 GIF
+- [ ] 带 `--collection` / `--declaration` 的，确认平台侧目标已存在
+- [ ] 正文长用 `--notef` 从文件读，别和命令行转义较劲
+- [ ] **不要把 cookie 路径、二维码内容写进对话或日志**
+
 ## 模板文件
 
 当你需要稳定的命令模板时，使用 `scripts/examples/` 下的文件：
