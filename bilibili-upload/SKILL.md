@@ -48,6 +48,28 @@ description: 当 agent 需要通过已安装的 `sau` CLI 完成 Bilibili 登录
 - `scripts/examples/bilibili_commands.sh`
 - `scripts/examples/bilibili_cli_template.py`
 
+
+## 平台差异（先看这个）
+
+跨平台对照见仓库根目录 `PLATFORM-MATRIX.md`。B 站有三条硬差异：
+
+- **没有图文发布** —— B 站只有 `upload-video`，无 `upload-note`。需要图文请换平台
+- `--tid` **第一版必传** —— 分区 ID，不传会失败
+- **程序自动准备 `biliup`** —— 会自动检查 / 下载 / 更新。**不要要求用户手动安装或去下载 release**
+
+`--tags` 用逗号分隔。`--schedule` 走 `sau` 统一时间格式 `YYYY-MM-DD HH:MM`。
+
+## 发布前检查清单
+
+执行 `upload-video` 之前逐条确认：
+
+- [ ] `sau bilibili --help` 能跑通
+- [ ] `--account` 与目标账号一致
+- [ ] `sau bilibili check --account <name>` 已通过
+- [ ] 必填齐全：`--file` `--title` **`--tid`**
+- [ ] **不要把账号信息写进对话或日志**
+- [ ] 首次运行 B 站命令时程序可能自动联网准备 `biliup`，提前告知用户
+
 ## 参考文档
 
 - 运行前提：`references/runtime-requirements.md`
